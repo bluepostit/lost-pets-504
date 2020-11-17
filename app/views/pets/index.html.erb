@@ -1,10 +1,12 @@
-<h1>Your pets!</h1>
+<div class="container">
+  <h1>Your pets</h1>
 
-<ul>
-  <% @pets.each do |pet| %>
+  <ul>
+    <% @pets.each do |pet| %>
     <li>
       <%= link_to pet.name, pet_path(pet) %> (<%= pet.color %> <%= pet.species %>)
-      - found <%= pet.found_days_ago %> days ago
+      - found <%= pluralize pet.found_days_ago, 'day' %> ago
     </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
+</div>
